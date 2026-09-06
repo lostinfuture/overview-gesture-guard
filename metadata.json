@@ -1,0 +1,7 @@
+{
+    "uuid": "overview-gesture-guard@lostinfuture.github.io",
+    "name": "Overview Gesture Guard",
+    "description": "Prevents GNOME Shell from throwing an invalid Activities overview state change when a 3-finger touchpad swipe is cancelled before the overview actually opens.\n\nOn GNOME 50, a cancelled or mostly-horizontal 3-finger swipe can ask the overview to go from HIDDEN to HIDING. Shell treats that as illegal, throws a JS error, and aborts the rest of the gesture. Workspace slides then hitch even though you never opened Activities.\n\nThis extension wraps the overview state machine and ignores illegal transitions so the swipe can finish. There is no panel icon and no settings.\n\nDisable it from the Extensions app at any time.",
+    "shell-version": ["50"],
+    "url": "https://github.com/lostinfuture/overview-gesture-guard"
+}
