@@ -40,18 +40,6 @@ gnome-extensions install -f overview-gesture-guard@lostinfuture.github.io.shell-
 Then log out and back in (Wayland), and enable **Overview Gesture Guard**
 in the Extensions app.
 
-## Pack for extensions.gnome.org
-
-```sh
-gnome-extensions pack --force --extra-source=LICENSE
-```
-
-Upload the zip at <https://extensions.gnome.org/upload/>.
-
-The `url` field in `metadata.json` must point at a public git repository
-that contains this source. Create that repository and push before, or
-right after, the upload.
-
 ## License
 
 GPL-2.0-or-later. GNOME Shell extensions that import Shell modules must
