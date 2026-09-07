@@ -2,7 +2,7 @@
 
 GNOME Shell extension for GNOME 50. It stops an illegal Activities
 overview state change that throws during cancelled 3-finger touchpad
-swipes and hitchs workspace switching.
+swipes and hitches workspace switching.
 
 ## What it fixes
 

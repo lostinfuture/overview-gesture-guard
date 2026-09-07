@@ -15,19 +15,30 @@ export default class OverviewGestureGuard extends Extension {
 
         this._originalChangeShownState = original;
 
-        overview._changeShownState = function (state) {
+        const wrapper = function (state) {
             const allowed = ALLOWED_TRANSITIONS[this._shownState];
-            if (allowed && !allowed.includes(state))
+            if (allowed && !allowed.includes(state)) {
+                console.debug(`Overview Gesture Guard: ignored ${this._shownState} → ${state}`);
                 return;
+            }
 
             return original.call(this, state);
         };
+
+        this._wrapper = wrapper;
+        overview._changeShownState = wrapper;
     }
 
     disable() {
-        if (this._originalChangeShownState)
-            Main.overview._changeShownState = this._originalChangeShownState;
+        const overview = Main.overview;
+
+        if (overview._changeShownState !== this._wrapper) {
+            console.warn('Overview Gesture Guard: _changeShownState was replaced by another extension; not restoring the original');
+        } else if (this._originalChangeShownState) {
+            overview._changeShownState = this._originalChangeShownState;
+        }
 
         this._originalChangeShownState = null;
+        this._wrapper = null;
     }
 }
