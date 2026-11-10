@@ -1,6 +1,6 @@
 # Overview Gesture Guard
 
-GNOME Shell extension for GNOME 50. It stops an illegal Activities
+GNOME Shell extension for GNOME 50 and 51. It stops an illegal Activities
 overview state change that throws during cancelled 3-finger touchpad
 swipes and hitches workspace switching.
 
